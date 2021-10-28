@@ -1,0 +1,9 @@
+version: '3'
+services:  #builts the two nodes that we want
+  redis-server:
+    image: 'redis'
+  node-app:
+    restart: on-failure
+    build: . #look in the current directory and build
+    ports: #specifies the ports
+      - '8081:8081'  #local to image
